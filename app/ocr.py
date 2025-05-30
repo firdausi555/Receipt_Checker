@@ -9,7 +9,7 @@ def extract_receipt_data(file_path: str):
     for img in images:
         full_text += pytesseract.image_to_string(img)
 
-  
+    # to debug 
     # print(full_text)
 
     total_amount = None
@@ -20,7 +20,7 @@ def extract_receipt_data(file_path: str):
     purchased_at = None
     date_matches = re.findall(r'([0-9]{2}/[0-9]{2}/[0-9]{2,4})', full_text)
     if date_matches:
-        date_str = date_matches[-1]  # Pick the last date found
+        date_str = date_matches[-1]  
         try:
             if len(date_str.split('/')[-1]) == 2:
                 purchased_at = datetime.strptime(date_str, '%m/%d/%y').isoformat()
