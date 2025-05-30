@@ -50,6 +50,8 @@ http://127.0.0.1:8000/docs
 🔹 Upload Receipt
 
 curl -X POST "http://127.0.0.1:8000/upload" -F "file=@/path/to/receipt.pdf"
+curl -X POST "http://127.0.0.1:8000/upload" -F "file=@sample_receipt.pdf"
+
 Response:
 
 {
